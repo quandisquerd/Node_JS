@@ -18,6 +18,15 @@ app.use('/api', Routercategory)
 app.use('/api', routerUser)
 app.use('/api', RouterUploadImage)
 app.use('/api', RouterUser)
-mongoose.connect("mongodb://127.0.0.1:27017/we17301");
+mongoose.connect("mongodb+srv://admin:admin@cluster0.hhw8z47.mongodb.net/nameDatabase?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    family: 4
+}).then(() => {
+    console.info('Connect database successfully'); // check cais nafy để biết là nó connect với thằng database chưa đừng dùng cái cú dùng cái cũ mày đéo biết là nó con nect thanh công hay không
+})
+    .catch((error) => {
+        console.info(error);
+    });; // nameDatabase là tên database admin là user sau : là pass muốn thêm acc thì thêm trong thằng database access
 
 export const viteNodeApp =app
